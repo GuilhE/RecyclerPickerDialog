@@ -22,7 +22,6 @@ nav:
   - "Changelog": changelog.md
   - "Contributing": contributing.md
   - "Code of Conduct": conduct.md
-  - "API Docs": api/-modules.html
 
 markdown_extensions:
   - admonition
