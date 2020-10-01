@@ -75,6 +75,7 @@ You can override the following attributes:
 </resources>
 ```
 Where:
+
 - _colorPrimary_ > Title and Button background color
 - _colorOnPrimary_ > Title and Button text color
 - _colorSecondary_ > Dialog and Row background color
