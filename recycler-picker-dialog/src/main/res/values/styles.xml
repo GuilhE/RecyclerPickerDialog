@@ -1,0 +1,74 @@
+<resources>
+
+    <style name="RecyclerPickerDialog.Style" parent="Theme.MaterialComponents" />
+
+    <style name="RecyclerPickerDialog.Style.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:padding">20dp</item>
+        <item name="cardBackgroundColor">?attr/colorSecondary</item>
+        <item name="cardCornerRadius">?attr/recyclerPickerDialogCornerRadius</item>
+    </style>
+
+    <style name="RecyclerPickerDialog.Style.Title" parent="Widget.MaterialComponents.TextView">
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAppearance">@android:style/TextAppearance</item>
+    </style>
+
+    <style name="RecyclerPickerDialog.Style.InputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextColor">?android:attr/textColorSecondary</item>
+        <item name="android:textColorHint">?android:attr/textColorSecondary</item>
+        <item name="endIconTint">?android:attr/textColorSecondary</item>
+        <item name="startIconTint">?android:attr/textColorSecondary</item>
+        <item name="paddingStart">2dp</item>
+        <item name="boxStrokeColor">@null</item>
+    </style>
+
+    <style name="RecyclerPickerDialog.Style.Input">
+        <item name="android:inputType">textNoSuggestions</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColorHint">?android:attr/textColorSecondary</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:textAppearance">@android:style/TextAppearance</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="RecyclerPickerDialog.Style.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">?attr/textAppearanceButton</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="RecyclerPickerDialog.Style.Row">
+        <item name="android:background">?attr/colorSecondary</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:minHeight">50dp</item>
+    </style>
+
+    <style name="RecyclerPickerDialog.Style.Row.Choice">
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:duplicateParentState">false</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="RecyclerPickerDialog.Style.Row.HorizontalSep">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?android:attr/textColorSecondary</item>
+        <item name="android:alpha">0.5</item>
+    </style>
+</resources>

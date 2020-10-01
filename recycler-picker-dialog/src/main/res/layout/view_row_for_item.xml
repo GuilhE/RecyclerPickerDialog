@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+                name="item"
+                type="com.github.guilhe.recyclerpickerdialog.Item" />
+
+        <import type="com.github.guilhe.recyclerpickerdialog.SelectorType" />
+
+        <variable
+                name="selector"
+                type="com.github.guilhe.recyclerpickerdialog.SelectorType" />
+
+        <variable
+                name="percent"
+                type="Float" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/RecyclerPickerDialog.Style.Row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                itemGuidelinePercent="@{percent}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:layout_constraintGuide_percent="0.15" />
+
+        <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView"
+                style="@style/RecyclerPickerDialog.Style.Row.Choice"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="@{item.text}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Choice" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkButton"
+                android:layout_width="60dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:checked="@{item.selected}"
+                android:visibility="@{selector == SelectorType.CHECK_BOX? View.VISIBLE : View.INVISIBLE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:checked="true" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="60dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:checked="@{item.selected}"
+                android:visibility="@{selector == SelectorType.RADIO_BUTTON? View.VISIBLE : View.INVISIBLE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:checked="true" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchButton"
+                android:layout_width="55dp"
+                android:layout_height="0dp"
+                android:checked="@{item.selected}"
+                android:visibility="@{selector == SelectorType.SWITCH? View.VISIBLE : View.INVISIBLE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:checked="true" />
+
+        <View
+                style="@style/RecyclerPickerDialog.Style.Row.HorizontalSep"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,38 @@
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/grey_light</item>
+        <item name="colorPrimaryDark">@color/grey</item>
+        <item name="colorAccent">@color/white</item>
+    </style>
+
+    <style name="ThemeA" parent="Widget.MaterialComponents.Button">
+        <item name="colorPrimary">@color/blue</item>
+    </style>
+
+    <style name="ThemeB" parent="Widget.MaterialComponents.Button">
+        <item name="colorPrimary">@color/red</item>
+    </style>
+
+    <style name="ThemeC" parent="Widget.MaterialComponents.Button">
+        <item name="colorPrimary">@color/ambar</item>
+    </style>
+
+    <style name="ThemeD" parent="Widget.MaterialComponents.Button">
+        <item name="colorPrimary">@color/green</item>
+    </style>
+
+    <style name="DialogA" parent="RecyclerPickerDialogTheme">
+        <item name="colorPrimary">@color/red</item>
+        <item name="recyclerPickerDialogCornerRadius">20dp</item>
+    </style>
+
+    <style name="DialogB" parent="RecyclerPickerDialogTheme">
+        <item name="colorPrimary">@color/ambar</item>
+        <item name="recyclerPickerDialogCornerRadius">20dp</item>
+    </style>
+
+    <style name="DialogC" parent="RecyclerPickerDialogTheme">
+        <item name="colorPrimary">@color/green</item>
+        <item name="recyclerPickerDialogCornerRadius">20dp</item>
+    </style>
+</resources>

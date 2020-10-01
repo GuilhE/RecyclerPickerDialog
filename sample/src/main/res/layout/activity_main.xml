@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_a_MaterialButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Single selection A"
+                android:theme="@style/ThemeA"
+                app:layout_constraintBottom_toTopOf="@+id/multiple_MaterialButton"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_b_MaterialButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Single selection B"
+                android:theme="@style/ThemeB"
+                app:layout_constraintBottom_toTopOf="@+id/multiple_MaterialButton"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_c_MaterialButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Multiple selection C"
+                android:theme="@style/ThemeC"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/simple_MaterialButton"
+                tools:ignore="HardcodedText" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/dialog_d_MaterialButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Multiple selection D"
+                android:theme="@style/ThemeD"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/simple_MaterialButton"
+                tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+</layout>
