@@ -1,14 +1,15 @@
 site_name: RecyclerPickerDialog
 repo_name: GuilhE/RecyclerPickerDialog
 repo_url: https://github.com/GuilhE/RecyclerPickerDialog
+site_author: GuilhE
+copyright: 'Copyright (c) 2020-present GuilhE'
 remote_branch: gh-pages
 
 theme:
   name: material
-  language: "en"
   palette:
-    primary: red
-    accent: red
+    primary: 'white'
+    accent: 'red'
   font:
     text: Open Sans
     code: Roboto Mono
@@ -28,32 +29,24 @@ markdown_extensions:
   - smarty
   - codehilite:
       guess_lang: false
-      linenums: True
   - footnotes
   - meta
   - toc:
       permalink: true
-  - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
-  - pymdownx.critic
-  - pymdownx.details
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.inlinehilite
   - pymdownx.magiclink
-  - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.superfences
-  - pymdownx.tasklist:
-      custom_checkbox: true
   - pymdownx.tabbed
-  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
   - tables
-
+  
 plugins:
   - search
-  - minify:
-      minify_html: true
+  - marcos
