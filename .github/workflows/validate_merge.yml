@@ -8,7 +8,7 @@ on:
       - "sample/**"
       - "buildSrc/**"
       - "gradle/**"
-      - "recyclerpickerdialog/**"
+      - "recycler-picker-dialog/**"
   pull_request:
     branches:
       - '*'
