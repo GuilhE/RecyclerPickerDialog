@@ -19,6 +19,7 @@ extra:
 nav:
   - "Overview": index.md
   - "Changelog": changelog.md
+  - "Contributing": contributing.md
   - "API Docs": api/-modules.html
 
 markdown_extensions:
