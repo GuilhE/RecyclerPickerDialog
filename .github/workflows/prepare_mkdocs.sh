@@ -35,3 +35,4 @@ set -x
 cat README.md | grep -v 'project website' > docs/index.md
 cp CHANGELOG.md docs/changelog.md
 cp CONTRIBUTING.md docs/contributing.md
+cp CODE_OF_CONDUCT.md docs/conduct.md
