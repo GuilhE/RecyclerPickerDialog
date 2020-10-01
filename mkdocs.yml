@@ -48,4 +48,4 @@ markdown_extensions:
   
 plugins:
   - search
-  - marcos
+  - macros
