@@ -9,6 +9,7 @@ on:
       - "CHANGELOG.md"
       - "mkdocs.yml"
       - ".github/workflows/publish_docs.yml"
+      - ".github/workflows/prepare_mkdocs.sh"
 
 jobs:
   deploy:
