@@ -1,6 +1,6 @@
 # RecyclerPickerDialog
 
-A FragmentDialog implemented with RecyclerView that can accept Single or Multiple selections.
+A FragmentDialog implemented with RecyclerView that can accept Single or Multiple selections
 
 ## Installation
 
