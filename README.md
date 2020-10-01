@@ -45,7 +45,7 @@ picker.newInstance(/* setup... */).apply { lifecycleOwner = this@MainActivity }
     
 ### Themes
 
-<img src="docs/media/sampleA.gif" alt="Sample A" width="24%"/> <img src="docs/media/sampleB.gif" alt="Sample B" width="24%"/> <img src="docs/media/sampleC.gif" alt="Sample C" width="24%"/> <img src="docs/media/sampleD.gif" alt="Sample D" width="24%"/>
+<img src="media/sampleA.gif" alt="Sample A" width="24%"/> <img src="media/sampleB.gif" alt="Sample B" width="24%"/> <img src="media/sampleC.gif" alt="Sample C" width="24%"/> <img src="media/sampleD.gif" alt="Sample D" width="24%"/>
   
 
 To override default theme just create yours by simply extending it and replacing desired color values:  
