@@ -22,7 +22,7 @@ enum class SelectionType { SINGLE, MULTIPLE }
 ```kotlin
 enum class SelectorType { CHECK_BOX, RADIO_BUTTON, SWITCH }
 ```
-
+ 
 ### Custom fields (and default values)
 ```kotlin
 var title = ""
