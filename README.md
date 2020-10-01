@@ -50,8 +50,9 @@ picker.newInstance(/* setup... */).apply { lifecycleOwner = this@MainActivity }
 
 To override default theme just create yours by simply extending it and replacing desired color values:  
 ```xml
-<style name="ThemeA" parent="Widget.MaterialComponents.Button">
-    <item name="colorPrimary">@color/blue</item>
+<style name="DialogA" parent="RecyclerPickerDialogTheme">
+    <item name="colorPrimary">@color/red</item>
+    <item name="recyclerPickerDialogCornerRadius">20dp</item>
 </style>
 ```
 
