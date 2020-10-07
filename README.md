@@ -31,6 +31,7 @@ var inputHint = ""
 var buttonText: String = "Ok"
 var resetValuesOnShow = true
 var dismissKeyboardOnSelection = true
+var dismissOnSelection = false
 var data: ArrayList<Item> = arrayListOf()
 @AnimRes var itemsLayoutAnimator: Int? = null
 var dialogHeight: Int = ViewGroup.LayoutParams.MATCH_PARENT

@@ -36,6 +36,7 @@ class RecyclerPickerDialogFragment(private val onDismiss: (selected: List<Item>)
     var showSearchBar = false
     var resetValuesOnShow = true
     var dismissKeyboardOnSelection = true
+    var dismissOnSelection = false
     var data: ArrayList<Item> = arrayListOf()
         set(value) {
             field = value
@@ -64,8 +65,8 @@ class RecyclerPickerDialogFragment(private val onDismiss: (selected: List<Item>)
         }
 
     override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
-        if (event == Lifecycle.Event.ON_DESTROY) {
-            dismiss()
+        if (event == Lifecycle.Event.ON_DESTROY && isAdded) {
+            dismissAllowingStateLoss()
         }
     }
 
@@ -76,7 +77,7 @@ class RecyclerPickerDialogFragment(private val onDismiss: (selected: List<Item>)
             (arguments?.getSerializable(EXTRA_FOR_SELECTOR_TYPE) ?: SelectorType.CHECK_BOX) as SelectorType,
             onDataUpdate = { old, new, isSingle ->
                 if (isSingle) {
-                    data.find { it.id == new.id }?.isSelected = if(old == new) new.isSelected.not() else true
+                    data.find { it.id == new.id }?.isSelected = if (old == new) new.isSelected.not() else true
                     old?.let { data.find { it.id == old.id && it.id != new.id }?.isSelected = false }
                     /** note: [dataFiltered] will automatically replicate [data] changes, this is because they are a ref copy.**/
                     dataAdapter.notifyItemChanged(dataFiltered.indexOf(new))
@@ -85,7 +86,12 @@ class RecyclerPickerDialogFragment(private val onDismiss: (selected: List<Item>)
                     data.find { it.id == new.id }?.isSelected = !new.isSelected
                     dataAdapter.notifyItemChanged(dataFiltered.indexOf(new))
                 }
-                stealFocusFromInput()
+
+                if (dismissOnSelection) {
+                    binding.btnOk.performContextClick()
+                } else {
+                    stealFocusFromInput()
+                }
             }
         )
         setStyle(STYLE_NO_TITLE, arguments?.getInt(EXTRA_FOR_THEME, R.style.RecyclerPickerDialogTheme) ?: R.style.RecyclerPickerDialogTheme)
