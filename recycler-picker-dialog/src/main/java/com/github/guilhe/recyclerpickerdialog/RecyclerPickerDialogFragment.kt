@@ -88,7 +88,7 @@ class RecyclerPickerDialogFragment(private val onDismiss: (selected: List<Item>)
                 }
 
                 if (dismissOnSelection) {
-                    binding.btnOk.performContextClick()
+                    binding.btnOk.performClick()
                 } else {
                     stealFocusFromInput()
                 }
