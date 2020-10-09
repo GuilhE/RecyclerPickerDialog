@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val dialogA = RecyclerPickerDialogFragment.newInstance(onDismiss = { selected -> showToast(selected) }).apply {
+        val dialogA = RecyclerPickerDialogFragment.newInstance(onItemsPicked = { selected -> showToast(selected) }).apply {
             title = "Single Selection A"
             showSearchBar = true
             inputHint = "search by name…"
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 SelectionType.SINGLE,
                 SelectorType.SWITCH,
                 R.style.DialogA,
-                onDismiss = { selected -> showToast(selected) }
+                onItemsPicked = { selected -> showToast(selected) }
             ).apply {
                 title = "Single Selection B"
                 data = arrayListOf<Item>().also {
@@ -50,6 +50,8 @@ class MainActivity : AppCompatActivity() {
                 itemsLayoutAnimator = R.anim.layout_animation_slide_left
                 dialogHeight = (500 * Resources.getSystem().displayMetrics.density + 0.5f).toInt()
                 lifecycleOwner = this@MainActivity
+                isCancelable = false
+                isChoiceMandatory = true
             }
         binding.dialogBMaterialButton.setOnClickListener { dialogB.show(supportFragmentManager, "BDialogFragment") }
 
@@ -58,7 +60,7 @@ class MainActivity : AppCompatActivity() {
                 SelectionType.MULTIPLE,
                 SelectorType.RADIO_BUTTON,
                 R.style.DialogB,
-                onDismiss = { selected -> showToast(selected) }
+                onItemsPicked = { selected -> showToast(selected) }
             ).apply {
                 title = "Multiple Selection C"
                 data = arrayListOf<Item>().also {
@@ -68,6 +70,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 dialogHeight = (500 * Resources.getSystem().displayMetrics.density + 0.5f).toInt()
                 lifecycleOwner = this@MainActivity
+                isChoiceMandatory = true
             }
         binding.dialogCMaterialButton.setOnClickListener { dialogC.show(supportFragmentManager, "CDialogFragment") }
 
@@ -75,7 +78,7 @@ class MainActivity : AppCompatActivity() {
             RecyclerPickerDialogFragment.newInstance(
                 SelectionType.MULTIPLE,
                 theme = R.style.DialogC,
-                onDismiss = { selected -> showToast(selected) }
+                onItemsPicked = { selected -> showToast(selected) }
             ).apply {
                 title = "Multiple Selection D"
                 data = arrayListOf<Item>().also {

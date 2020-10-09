@@ -32,6 +32,7 @@ var buttonText: String = "Ok"
 var resetValuesOnShow = true
 var dismissKeyboardOnSelection = true
 var dismissOnSelection = false
+var isChoiceMandatory = false
 var data: ArrayList<Item> = arrayListOf()
 @AnimRes var itemsLayoutAnimator: Int? = null
 var dialogHeight: Int = ViewGroup.LayoutParams.MATCH_PARENT
@@ -85,6 +86,7 @@ Where:
 - _textColorPrimary_ > Search and Row text color
 - _textColorSecondary_ > Search hint and icon color; Horizontal Lines color
 - _colorSurface_ > CheckBox, RadioButton and Switch unchecked color
+- _colorOnSurface_ Button background when disabled (__note__ overrides _colorSurface_)
 - _colorAccent_ > CheckBox, RadioButton and Switch checked color; Hint cursor color
 - _recyclerPickerDialogCornerRadius_ > Dialog corners radius
 
@@ -96,7 +98,7 @@ val picker =
             type = SelectionType.SINGLE, //default
             selector = SelectorType.CHECK_BOX, //default
             theme = R.style.RecyclerPickerDialogTheme, //default
-            onDismiss = { selected -> /* selected items or empty */ }
+            onItemsPicked = { selected -> /* selected items or empty */ }
         )
         .apply {
             /* configure custom fields */ 

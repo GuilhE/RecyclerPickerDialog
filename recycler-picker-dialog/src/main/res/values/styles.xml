@@ -52,13 +52,13 @@
 
     <style name="RecyclerPickerDialog.Style.Row">
         <item name="android:background">?attr/colorSecondary</item>
-        <item name="android:foreground">?attr/selectableItemBackground</item>
         <item name="android:minHeight">50dp</item>
     </style>
 
     <style name="RecyclerPickerDialog.Style.Row.Choice">
         <item name="android:padding">10dp</item>
         <item name="android:gravity">center_vertical</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
         <item name="android:duplicateParentState">false</item>

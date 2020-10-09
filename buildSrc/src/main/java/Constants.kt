@@ -9,7 +9,7 @@ object AndroidConstants {
 }
 
 object Versions {
-    const val build_gradle_version = "4.0.1"
+    const val build_gradle_version = "4.0.2"
     const val kotlin_gradle_plugin_version = "1.4.0"
     const val bintray_plugin_version = "1.8.5"
 
@@ -19,7 +19,7 @@ object Versions {
     const val kotlin_stdlib_version = "1.4.0"
     const val androidx_appcompat_version = "1.2.0"
     const val androidx_recyclerview_version = "1.1.0"
-    const val androidx_constraintlayout_version = "2.0.1"
+    const val androidx_constraintlayout_version = "2.0.2"
     const val material_version = "1.2.1"
 }
 

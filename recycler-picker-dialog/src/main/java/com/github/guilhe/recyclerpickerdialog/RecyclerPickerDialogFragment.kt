@@ -24,7 +24,7 @@ import java.io.Serializable
 import java.util.*
 
 @Suppress("MemberVisibilityCanBePrivate", "UNCHECKED_CAST")
-class RecyclerPickerDialogFragment(private val onDismiss: (selected: List<Item>) -> Unit) : DialogFragment(), LifecycleEventObserver {
+class RecyclerPickerDialogFragment(private val onItemsPicked: (selected: List<Item>) -> Unit) : DialogFragment(), LifecycleEventObserver {
 
     private var dataFiltered: ArrayList<Item> = arrayListOf()
     private lateinit var dataAdapter: ItemsAdapter
@@ -58,6 +58,12 @@ class RecyclerPickerDialogFragment(private val onDismiss: (selected: List<Item>)
             field = if (value < 0) ViewGroup.LayoutParams.MATCH_PARENT else value
         }
 
+    var isChoiceMandatory = false
+        set(value) {
+            field = value
+            updateBtnOkEnableStatus()
+        }
+
     var lifecycleOwner: LifecycleOwner? = null
         set(value) {
             field = value
@@ -87,6 +93,7 @@ class RecyclerPickerDialogFragment(private val onDismiss: (selected: List<Item>)
                     dataAdapter.notifyItemChanged(dataFiltered.indexOf(new))
                 }
 
+                updateBtnOkEnableStatus()
                 if (dismissOnSelection) {
                     binding.btnOk.performClick()
                 } else {
@@ -138,9 +145,10 @@ class RecyclerPickerDialogFragment(private val onDismiss: (selected: List<Item>)
             adapter = dataAdapter.apply { updateItems(dataFiltered) }
         }
 
+        updateBtnOkEnableStatus()
         binding.btnOk.text = buttonText
         binding.btnOk.setOnClickListener {
-            onDismiss.invoke(data.filter { it.isSelected })
+            onItemsPicked.invoke(data.filter { it.isSelected })
             this.dismiss()
         }
     }
@@ -160,13 +168,19 @@ class RecyclerPickerDialogFragment(private val onDismiss: (selected: List<Item>)
         }
     }
 
+    private fun updateBtnOkEnableStatus() {
+        if (::binding.isInitialized) {
+            binding.btnOk.isEnabled = !isChoiceMandatory || (isChoiceMandatory && data.count { it.isSelected } > 0)
+        }
+    }
+
     companion object {
         fun newInstance(
             type: SelectionType = SelectionType.SINGLE,
             selector: SelectorType = SelectorType.CHECK_BOX,
             @StyleRes theme: Int = R.style.RecyclerPickerDialogTheme,
-            onDismiss: (List<Item>) -> Unit
-        ) = RecyclerPickerDialogFragment(onDismiss).apply {
+            onItemsPicked: (List<Item>) -> Unit
+        ) = RecyclerPickerDialogFragment(onItemsPicked).apply {
             arguments = Bundle().apply {
                 putSerializable(EXTRA_FOR_SELECTION_TYPE, type)
                 putSerializable(EXTRA_FOR_SELECTOR_TYPE, selector)
