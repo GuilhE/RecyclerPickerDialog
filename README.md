@@ -62,17 +62,17 @@ To override default theme just create yours by simply extending it and replacing
 You can override the following attributes:
 ```xml
 <resources>
-    <style name="RecyclerPickerDialogTheme" parent="Theme.MaterialComponents.Dialog">
-        <item name="colorAccent"/>
+    <style name="RecyclerPickerDialogTheme" parent="Theme.MaterialComponents.Light.Dialog">
+
         <item name="colorPrimary"/>
         <item name="colorOnPrimary"/>
         <item name="colorSecondary"/>
-        <item name="colorSurface"/>
-
-        <item name="android:colorEdgeEffect"/>
+     
         <item name="android:textColorPrimary"/>
         <item name="android:textColorSecondary"/>
 
+        <item name="colorAccent"/>
+        <item name="android:colorEdgeEffect"/>
         <item name="recyclerPickerDialogCornerRadius"/>
     </style>
 </resources>
@@ -86,7 +86,7 @@ Where:
 - _textColorPrimary_ > Search and Row text color
 - _textColorSecondary_ > Search hint and icon color; Horizontal Lines color
 - _colorSurface_ > CheckBox, RadioButton and Switch unchecked color
-- _colorOnSurface_ Button background when disabled (__note__ overrides _colorSurface_)
+- _colorOnSurface_ > Button background when disabled (__note__ overrides _colorSurface_)
 - _colorAccent_ > CheckBox, RadioButton and Switch checked color; Hint cursor color
 - _recyclerPickerDialogCornerRadius_ > Dialog corners radius
 
