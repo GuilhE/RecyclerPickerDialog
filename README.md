@@ -63,7 +63,6 @@ You can override the following attributes:
 ```xml
 <resources>
     <style name="RecyclerPickerDialogTheme" parent="Theme.MaterialComponents.Light.Dialog">
-
         <item name="colorPrimary"/>
         <item name="colorOnPrimary"/>
         <item name="colorSecondary"/>
