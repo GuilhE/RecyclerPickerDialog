@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.4]
+
+- Simplified item row layout to improve selection ripple
+
+---
+
 ## [1.0.3]
 
 - Added `isChoiceMandatory` to force user submit a non-empty selection list

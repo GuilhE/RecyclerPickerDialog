@@ -2,9 +2,6 @@ package com.github.guilhe.recyclerpickerdialog
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.Guideline
-import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.github.guilhe.recyclerpickerdialog.databinding.ViewRowForItemBinding
 import java.util.*
@@ -30,7 +27,10 @@ class ItemsAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.item = data[position]
         holder.binding.selector = selectorType
-        holder.binding.percent = if (selectorType == SelectorType.SWITCH) 0.15f else 0.12f
+        with(holder.context) {
+            holder.binding.choicePaddingStart =
+                resources.getDimension(if (selectorType == SelectorType.SWITCH) R.dimen.padding_for_switch else R.dimen.padding_start_default)
+        }
         holder.binding.executePendingBindings() //because selector visibility
 
         holder.binding.root.setOnClickListener {
@@ -56,15 +56,7 @@ class ItemsAdapter(
         notifyDataSetChanged()
     }
 
-    class ViewHolder(val binding: ViewRowForItemBinding) : RecyclerView.ViewHolder(binding.root)
-}
-
-object ViewRowItemBindingAdapter {
-    @JvmStatic
-    @BindingAdapter(value = ["itemGuidelinePercent"])
-    fun setItemGuidelinePercent(view: Guideline, percent: Float = 0f) {
-        val params = view.layoutParams as ConstraintLayout.LayoutParams
-        params.guidePercent = percent
-        view.layoutParams = params
+    class ViewHolder(val binding: ViewRowForItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        val context = binding.root.context
     }
 }

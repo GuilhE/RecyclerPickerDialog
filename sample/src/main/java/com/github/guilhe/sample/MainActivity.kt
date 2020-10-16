@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                 lifecycleOwner = this@MainActivity
                 isCancelable = false
                 isChoiceMandatory = true
+                showSearchBar = true
             }
         binding.dialogBMaterialButton.setOnClickListener { dialogB.show(supportFragmentManager, "BDialogFragment") }
 

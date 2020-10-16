@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_for_switch">70dp</dimen>
+    <dimen name="padding_start_default">55dp</dimen>
+</resources>
