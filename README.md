@@ -1,5 +1,6 @@
 # RecyclerPickerDialog
-
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-RecyclerPickerDialog-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/8191)
+    
 A FragmentDialog implemented with RecyclerView that can accept Single or Multiple selections
 
 ## Installation
