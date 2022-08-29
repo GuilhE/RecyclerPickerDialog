@@ -5,12 +5,12 @@ A FragmentDialog implemented with RecyclerView that can accept Single or Multipl
 
 ## Installation
 
-RecyclerPickerDialog is distributed through [Maven Central](https://search.maven.org/artifact/com.github.guilhe/recycler-picker-dialog), [Jcenter](https://bintray.com/gdelgado/android/RecyclerPickerDialog) and [Jitpack](https://jitpack.io/#GuilhE/RecyclerPickerDialog).
+RecyclerPickerDialog is distributed through [Maven Central](https://search.maven.org/artifact/com.github.guilhe/recycler-picker-dialog) and [Jitpack](https://jitpack.io/#GuilhE/RecyclerPickerDialog).
 
 ```groovy
 implementation 'com.github.guilhe:recycler-picker-dialog:${LATEST_VERSION}'
 ```
-[![Maven Central](https://img.shields.io/maven-central/v/com.github.guilhe/recycler-picker-dialog.svg)](https://search.maven.org/search?q=g:com.github.guilhe%20AND%20recycler-picker-dialog) [![Download](https://api.bintray.com/packages/gdelgado/android/RecyclerPickerDialog/images/download.svg)](https://bintray.com/gdelgado/android/RecyclerPickerDialog/_latestVersion) ![Bintray](https://img.shields.io/bintray/dt/gdelgado/android/RecyclerPickerDialog)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.guilhe/recycler-picker-dialog.svg)](https://search.maven.org/search?q=g:com.github.guilhe%20AND%20recycler-picker-dialog)
 
 ## Usage
 
